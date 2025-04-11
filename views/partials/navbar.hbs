@@ -1,0 +1,102 @@
+<div class="container py-3">
+  <header>
+    <div
+      class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom"
+    >
+      <a
+        href="/"
+        class="d-flex align-items-center link-body-emphasis text-decoration-none"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="32"
+          viewBox="0 0 118 94"
+          role="img"
+        >
+          <title>Boom Shop</title>
+          <defs>
+            <radialGradient id="grad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" style="stop-color:#ff7b00; stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#ff0000; stop-opacity:1" />
+            </radialGradient>
+          </defs>
+          <circle cx="59" cy="47" r="45" fill="url(#grad)" />
+          <text
+            x="50%"
+            y="55%"
+            font-size="24"
+            font-weight="bold"
+            fill="white"
+            text-anchor="middle"
+            dominant-baseline="middle"
+            font-family="Arial, sans-serif"
+          >BOOM</text>
+        </svg>
+
+        <span class="fs-4">Boom Shop</span>
+      </a>
+
+      <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+
+        {{#if isProducts}}
+          <a class="me-3 py-2 link-body-emphasis" href="/products">Products</a>
+        {{else}}
+          <a
+            class="me-3 py-2 link-body-emphasis text-decoration-none"
+            href="/products"
+          >Products</a>
+        {{/if}}
+
+        {{#if isAdd}}
+          <a class="me-3 py-2 link-body-emphasis" href="/add">Add</a>
+        {{else}}
+          <a
+            class="me-3 py-2 link-body-emphasis text-decoration-none"
+            href="/add"
+          >Add</a>
+        {{/if}}
+
+        <div
+          class="btn-group"
+          role="group"
+          aria-label="Basic mixed styles example"
+        >
+          {{#if isAuth}}
+            <button type="button" class="btn btn-danger" id="logout-btn">
+              <a
+                class="text-light text-decoration-none d-flex align-items-center"
+                href="/logout"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-arrow-bar-right me-1"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5"
+                  />
+                </svg>
+                Logout
+              </a>
+            </button>
+          {{else}}
+            <button type="button" class="btn btn-primary">
+              <a class="text-light text-decoration-none" href="/login">Login</a>
+            </button>
+            <button type="button" class="btn btn-success">
+              <a
+                class="text-light text-decoration-none"
+                href="/register"
+              >Register</a>
+            </button>
+          {{/if}}
+        </div>
+
+      </nav>
+    </div>
+  </header>
+</div>
